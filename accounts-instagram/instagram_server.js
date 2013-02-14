@@ -1,11 +1,11 @@
 if (Meteor.isServer) {
   
   Meteor.http.call("GET", "https://api.instagram.com/v1/users/self/",
-      {data: {'access_token': Accounts._storedLoginToken()}},
+      {params: {'access_token': Accounts._storedLoginToken()}},
       function (error, result) {
-        if (result.statusCode === 200) {
+//        if (result.statusCode === 200) {
           console.log(result);
-        }
+//        }
       });
   
   (function () {
