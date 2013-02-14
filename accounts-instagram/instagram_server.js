@@ -1,6 +1,6 @@
 if (Meteor.isServer) {
   
-  (function () {
+//  (function () {
 
       Accounts.oauth.registerService('instagram', 2, function(query) {
 
@@ -55,5 +55,5 @@ if (Meteor.isServer) {
               throw result.content;
           return result.content;
       };
-  })();
+//  })();
 }
