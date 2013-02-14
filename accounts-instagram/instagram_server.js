@@ -48,8 +48,6 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({checkInstagram: function (  ) {
-  var accessToken = getAccessToken(query);
-
   this.unblock();
   var result = Meteor.http.call("GET", "https://api.instagram.com/v1/users/self",
                                 {params: {'access_token': Accounts._storedLoginToken()}});
