@@ -2,12 +2,13 @@ if (Meteor.isClient) {
   Template.hello.rendered = function() {
     addFontSizeScale();
     
-    var result = Meteor.http.get(
-      "https://api.instagram.com/v1/users/1574083/", {params: {
-          'access_token': Accounts._storedLoginToken()
-      }});
-    
-     console.log(result);
+    Meteor.http.call("GET", "https://api.instagram.com/v1/users/1574083/",
+      {data: {'access_token': Accounts._storedLoginToken()}},
+      function (error, result) {
+        if (result.statusCode === 200) {
+          console.log(result);
+        }
+      });
   };
 
   Template.hello.events({
