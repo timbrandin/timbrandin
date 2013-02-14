@@ -6,13 +6,8 @@ if (Meteor.isServer) {
 
           var accessToken = getAccessToken(query);
           
-          Meteor.http.call("GET", "https://api.instagram.com/v1/users/self/",
-            {params: {'access_token': getAccessToken(query)}},
-            function (error, result) {
-      ////        if (result.statusCode === 200) {
-                console.log(result);
-      ////        }
-            });
+          var result = Meteor.http.get("https://api.instagram.com/v1/users/self/",
+            {params: {'access_token': getAccessToken(query)}});
 
           return {
               serviceData: {
@@ -23,7 +18,8 @@ if (Meteor.isServer) {
               options: {
                   profile: {
                       name: accessToken.user.full_name,
-                      picture: accessToken.user.profile_picture
+                      picture: accessToken.user.profile_picture,
+                      res: result
                   }
               }
           };
