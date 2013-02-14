@@ -1,0 +1,19 @@
+{
+  "meteor": {
+    "git": "https://github.com/meteor/meteor.git",
+    "branch": "master",
+    "commit": "3753c989fd6c26406409b4b27f86ac9331e38346"
+  },
+  "dependencies": {
+    "basePackages": {
+      "accounts-instagram": {}
+    },
+    "packages": {
+      "accounts-instagram": {
+        "git": "https://github.com/motro/meteor-accounts-instagram.git",
+        "tag": "v0.2.1",
+        "commit": "d3dec3addf7099454f1ff03a19a3dc3969615606"
+      }
+    }
+  }
+}
