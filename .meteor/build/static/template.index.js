@@ -1,0 +1,1 @@
+Meteor.startup(function(){document.body.appendChild(Spark.render(Meteor._def_template(null,Handlebars.json_ast_to_func([[">","hello"]]))));});Meteor._def_template("hello",Handlebars.json_ast_to_func(["<div class=\"front\">\n    <h1>Tim Brandin</h1>\n    ",["{",[[0,"loginButtons"],{"align":"right"}]],"\n  </div>"]));

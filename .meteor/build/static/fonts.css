@@ -1,0 +1,6 @@
+@font-face {
+  font-family: 'Fenix';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Fenix'), local('Fenix-Regular'), url(http://sypreme.se/sites/all/themes/sypreme2011/fonts/13FC2F_0.woff) format('woff');
+}

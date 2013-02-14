@@ -1,0 +1,334 @@
+#login-buttons {
+  display: inline-block;
+  margin-right: 0.2px;
+  line-height: 1;
+}
+#login-buttons .login-button {
+  position: relative;
+}
+#login-buttons .login-buttons-with-only-one-button {
+  display: inline-block;
+}
+#login-buttons .login-buttons-with-only-one-button .login-button {
+  display: inline-block;
+}
+#login-buttons .login-buttons-with-only-one-button .login-text-and-button {
+  display: inline-block;
+}
+#login-buttons .login-display-name {
+  display: inline-block;
+  padding-right: 2px;
+  line-height: 1.5;
+  font-family: 'Helvetica Neue', Helvetica, Arial, default;
+}
+#login-buttons .loading {
+  line-height: 1;
+  background-image: url(data:image/gif;base64,R0lGODlhEAALAPQAAP///wAAANra2tDQ0Orq6gYGBgAAAC4uLoKCgmBgYLq6uiIiIkpKSoqKimRkZL6+viYmJgQEBE5OTubm5tjY2PT09Dg4ONzc3PLy8ra2tqCgoMrKyu7u7gAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCwAAACwAAAAAEAALAAAFLSAgjmRpnqSgCuLKAq5AEIM4zDVw03ve27ifDgfkEYe04kDIDC5zrtYKRa2WQgAh+QQJCwAAACwAAAAAEAALAAAFJGBhGAVgnqhpHIeRvsDawqns0qeN5+y967tYLyicBYE7EYkYAgAh+QQJCwAAACwAAAAAEAALAAAFNiAgjothLOOIJAkiGgxjpGKiKMkbz7SN6zIawJcDwIK9W/HISxGBzdHTuBNOmcJVCyoUlk7CEAAh+QQJCwAAACwAAAAAEAALAAAFNSAgjqQIRRFUAo3jNGIkSdHqPI8Tz3V55zuaDacDyIQ+YrBH+hWPzJFzOQQaeavWi7oqnVIhACH5BAkLAAAALAAAAAAQAAsAAAUyICCOZGme1rJY5kRRk7hI0mJSVUXJtF3iOl7tltsBZsNfUegjAY3I5sgFY55KqdX1GgIAIfkECQsAAAAsAAAAABAACwAABTcgII5kaZ4kcV2EqLJipmnZhWGXaOOitm2aXQ4g7P2Ct2ER4AMul00kj5g0Al8tADY2y6C+4FIIACH5BAkLAAAALAAAAAAQAAsAAAUvICCOZGme5ERRk6iy7qpyHCVStA3gNa/7txxwlwv2isSacYUc+l4tADQGQ1mvpBAAIfkECQsAAAAsAAAAABAACwAABS8gII5kaZ7kRFGTqLLuqnIcJVK0DeA1r/u3HHCXC/aKxJpxhRz6Xi0ANAZDWa+kEAA7AAAAAAAAAAAA);
+  width: 16px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+#login-buttons .login-button,
+.accounts-dialog .login-button {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  padding: 4px 8px;
+  font-size: 80%;
+  font-family: 'Helvetica Neue', Helvetica, Arial, default;
+  line-height: 1.5;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.5);
+  background-color: #8790b4;
+  background-image: -moz-linear-gradient(top, #a5acc9, #596595);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#a5acc9), to(#596595));
+  background-image: -webkit-linear-gradient(top, #a5acc9, #596595);
+  background-image: -o-linear-gradient(top, #a5acc9, #596595);
+  background-image: linear-gradient(to bottom, #a5acc9, #596595);
+  background-repeat: repeat-x;
+  border-radius: 4px;
+  border: 1px solid #1b1e2d;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+#login-buttons .login-button:active,
+.accounts-dialog .login-button:active {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  background-color: #727b9f;
+  background-image: -moz-linear-gradient(top, #8e97b9, #485177);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#8e97b9), to(#485177));
+  background-image: -webkit-linear-gradient(top, #8e97b9, #485177);
+  background-image: -o-linear-gradient(top, #8e97b9, #485177);
+  background-image: linear-gradient(to bottom, #8e97b9, #485177);
+  background-repeat: repeat-x;
+}
+#login-buttons .login-button.login-button-disabled,
+.accounts-dialog .login-button.login-button-disabled,
+#login-buttons .login-button.login-button-disabled:active,
+.accounts-dialog .login-button.login-button-disabled:active {
+  color: #ddd;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  background: #999;
+}
+.accounts-dialog * {
+  padding: 0;
+  margin: 0;
+  line-height: inherit;
+  color: inherit;
+  font: inherit;
+}
+.accounts-dialog .login-button {
+  width: auto;
+  margin-bottom: 4px;
+}
+#login-buttons .login-buttons-padding {
+  display: inline-block;
+  width: 30px;
+}
+#login-buttons .login-display-name {
+  margin-right: 4px;
+}
+#login-buttons .configure-button {
+  background-color: #f5421f;
+  background-image: -moz-linear-gradient(top, #ff5533, #e52600);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ff5533), to(#e52600));
+  background-image: -webkit-linear-gradient(top, #ff5533, #e52600);
+  background-image: -o-linear-gradient(top, #ff5533, #e52600);
+  background-image: linear-gradient(to bottom, #ff5533, #e52600);
+  background-repeat: repeat-x;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+#login-buttons .configure-button:active {
+  background: #b10;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) inset;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) inset;
+}
+#login-buttons .login-image {
+  display: inline-block;
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+}
+#login-buttons .text-besides-image {
+  margin-left: 18px;
+}
+#login-buttons .no-services {
+  color: red;
+}
+#login-buttons .login-link-and-dropdown-list {
+  position: relative;
+}
+#login-buttons .login-close-text {
+  float: left;
+  position: relative;
+  padding-bottom: 8px;
+}
+#login-buttons .login-text-and-button .loading,
+#login-buttons .login-link-and-dropdown-list .loading {
+  display: inline-block;
+}
+#login-buttons.login-buttons-dropdown-align-left #login-dropdown-list .loading {
+  float: right;
+}
+#login-buttons.login-buttons-dropdown-align-right #login-dropdown-list .loading {
+  float: left;
+}
+#login-buttons .login-close-text-clear {
+  clear: both;
+}
+#login-buttons .or {
+  text-align: center;
+}
+#login-buttons .hline {
+  text-decoration: line-through;
+  color: lightgrey;
+}
+#login-buttons .or-text {
+  font-weight: bold;
+}
+#login-buttons #signup-link {
+  float: right;
+}
+#login-buttons #forgot-password-link {
+  float: left;
+}
+#login-buttons #back-to-login-link {
+  float: right;
+}
+#login-buttons a,
+.accounts-dialog a {
+  cursor: pointer;
+  text-decoration: underline;
+}
+#login-buttons.login-buttons-dropdown-align-right .login-close-text {
+  float: right;
+}
+.accounts-dialog {
+  border: 1px solid #777777;
+  z-index: 1000;
+  background: white;
+  box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin: -8px -12px 0 -12px;
+  width: 198px;
+  font-size: 16px;
+  color: #333;
+}
+.accounts-dialog > * {
+  line-height: 1.6;
+}
+.accounts-dialog > .login-close-text {
+  line-height: inherit;
+}
+.accounts-dialog label,
+.accounts-dialog .title {
+  font-weight: bold;
+  font-size: 80%;
+}
+.accounts-dialog input {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+}
+.accounts-dialog input[type] {
+  height: auto;
+}
+.accounts-dialog .login-button-form-submit {
+  margin-top: 8px;
+}
+.accounts-dialog .message {
+  font-size: 80%;
+  margin-top: 2px;
+  line-height: 1.3;
+}
+.accounts-dialog .error-message {
+  color: red;
+}
+.accounts-dialog .info-message {
+  color: green;
+}
+.accounts-dialog .additional-link {
+  font-size: 75%;
+}
+.accounts-dialog .accounts-close {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 20px;
+  text-decoration: none;
+  color: #000;
+  opacity: 0.4;
+}
+.accounts-dialog .accounts-close:hover {
+  opacity: 0.8;
+}
+.accounts-dialog #login-buttons-cancel-reset-password {
+  float: right;
+}
+.accounts-dialog #login-buttons-cancel-enroll-account {
+  float: right;
+}
+#login-dropdown-list {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+}
+#login-buttons.login-buttons-dropdown-align-right #login-dropdown-list {
+  left: auto;
+  right: -1px;
+}
+#login-buttons-message-dialog .message {
+  /* we intentionally want it bigger on this dialog since it's the only thing displayed */
+
+  font-size: 100%;
+}
+.accounts-centered-dialog {
+  font-family: 'Helvetica Neue', Helvetica, Arial, default;
+  z-index: 1001;
+  position: fixed;
+  left: 50%;
+  margin-left: -103px;
+  top: 50%;
+  margin-top: -40px;
+  /* = approximately -height/2, though height can change */
+
+}
+#configure-login-service-dialog {
+  width: 530px;
+  margin-left: -269px;
+  margin-top: -220px;
+  /* = approximately -height/2, though height can change */
+
+}
+#configure-login-service-dialog table {
+  width: 100%;
+}
+#configure-login-service-dialog input {
+  width: 100%;
+  font-family: "Courier New", Courier, monospace;
+}
+#configure-login-service-dialog ol {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#configure-login-service-dialog ol li {
+  margin-left: 30px;
+}
+#configure-login-service-dialog .configuration_labels {
+  width: 30%;
+}
+#configure-login-service-dialog .configuration_inputs {
+  width: 70%;
+}
+#configure-login-service-dialog .new-section {
+  margin-top: 10px;
+}
+#configure-login-service-dialog .url {
+  font-family: "Courier New", Courier, monospace;
+}
+#configure-login-service-dialog-save-configuration {
+  float: right;
+}
+.configure-login-service-dismiss-button {
+  float: left;
+}
+#just-verified-dismiss-button,
+#messages-dialog-dismiss-button {
+  margin-top: 4px;
+}
+.hide-background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  /* XXX consider replacing with DXImageTransform */
+
+  background-color: #000000;
+  /* fallback for IE7-8 */
+
+  background-color: rgba(0, 0, 0, 0.7);
+}
+input[type=text],
+input[type=email],
+input[type=password] {
+  padding: 4px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  line-height: 1;
+}
