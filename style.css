@@ -1,0 +1,17 @@
+/* CSS declarations go here */ 
+.front {
+  background: url(front.jpg) no-repeat top center;
+  background-size: 100% auto;
+  height: 0;
+  padding-bottom: 100%;
+  text-align: center;
+}
+.front h1 {
+  margin: 0;
+  padding-top: 35%;
+  font-size: 13em;
+  line-height: 1em;
+  color: #fff;
+  font-weight: normal;
+  font-family: 'Fenix';
+}
