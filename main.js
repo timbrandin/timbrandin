@@ -2,7 +2,7 @@ if (Meteor.isClient) {
   Template.hello.rendered = function() {
     addFontSizeScale();
     
-    console.log(Accounts);
+    console.log(Accounts._storedLoginToken());
     
 //    var result = Meteor.http.post(
 //      "https://api.instagram.com/oauth/access_token", {params: {
