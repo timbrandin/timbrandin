@@ -1,6 +1,9 @@
 if (Meteor.isClient) {  
   Template.hello.rendered = function() {
     addFontSizeScale();
+    
+    console.log(Meteor.absoluteUrl("_oauth/instagram?close=close", {replaceLocalhost: true}));
+    console.log(Meteor);
   };
 
   Template.hello.events({
