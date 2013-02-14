@@ -5,11 +5,6 @@ if (Meteor.isServer) {
       Accounts.oauth.registerService('instagram', 2, function(query) {
 
           var accessToken = getAccessToken(query);
-          
-          var result = Meteor.http.get("https://api.instagram.com/v1/users/self/media/recent/",
-            {params: {'access_token': accessToken}});
-            
-          console.log(result);
 
           return {
               serviceData: {
@@ -19,12 +14,23 @@ if (Meteor.isServer) {
               },
               options: {
                   profile: {
-                      name: result, //accessToken.user.full_name,
+                      name: accessToken.user.full_name,
                       picture: accessToken.user.profile_picture
                   }
               }
           };
       });
+      
+      Meteor.methods({checkInstagram: function (userId) {
+        var accessToken = getAccessToken(query);
+        
+        this.unblock();
+        var result = Meteor.http.call("GET", "https://api.instagram.com/v1/users/" + accessToken.user.id,
+                                      {params: {'access_token': accessToken.access_token}});
+        if (result.statusCode === 200)
+           return result;
+        return false;
+      }});
 
       var getAccessToken = function (query) {
           var config = Accounts.loginServiceConfiguration.findOne({service: 'instagram'});
