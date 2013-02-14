@@ -54,4 +54,5 @@ Meteor.methods({checkInstagram: function (  ) {
   if (result.statusCode === 200)
      return result;
   throw new Meteor.Error(404, "Can't find my pants");
+  return false;
 }});
