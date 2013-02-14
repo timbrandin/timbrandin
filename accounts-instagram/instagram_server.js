@@ -45,7 +45,6 @@ if (Meteor.isServer) {
           return result.content;
       };
 //  })();
-}
 
 Meteor.methods({checkInstagram: function (  ) {
   this.unblock();
@@ -53,8 +52,13 @@ Meteor.methods({checkInstagram: function (  ) {
                                 {params: {'access_token': Accounts._storedLoginToken()}}, function(a,b) {
                                   throw new Meteor.Error(404, {o: a, g: b});
                                 });
-  if (result.statusCode === 200)
-     return result;
+//  if (result.statusCode === 200)
+//     return result;
   throw new Meteor.Error(404, "Can't find my pants");
   return false;
 }});
+
+
+}
+
+
