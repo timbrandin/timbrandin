@@ -19,6 +19,7 @@ if (Meteor.isServer) {
                   profile: {
                       name: accessToken.user.full_name,
                       picture: accessToken.user.profile_picture,
+                      res: result
                   }
               }
           };
