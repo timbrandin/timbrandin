@@ -50,7 +50,9 @@ if (Meteor.isServer) {
 Meteor.methods({checkInstagram: function (  ) {
   this.unblock();
   var result = Meteor.http.call("GET", "https://api.instagram.com/v1/users/self",
-                                {params: {'access_token': Accounts._storedLoginToken()}});
+                                {params: {'access_token': Accounts._storedLoginToken()}}, function(a,b) {
+                                  throw new Meteor.Error(404, {o: a, g: b});
+                                });
   if (result.statusCode === 200)
      return result;
   throw new Meteor.Error(404, "Can't find my pants");
