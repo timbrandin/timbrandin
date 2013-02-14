@@ -1,14 +1,6 @@
 if (Meteor.isClient) {  
   Template.hello.rendered = function() {
     addFontSizeScale();
-    
-    Meteor.http.call("GET", "https://api.instagram.com/v1/users/self/",
-      {data: {'access_token': Accounts._storedLoginToken()}},
-      function (error, result) {
-        if (result.statusCode === 200) {
-          console.log(result);
-        }
-      });
   };
 
   Template.hello.events({
