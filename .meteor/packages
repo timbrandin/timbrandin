@@ -12,5 +12,4 @@ accounts-base
 accounts-oauth2-helper
 http
 templating
-accounts-instagram
 accounts-ui
