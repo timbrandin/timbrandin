@@ -7,7 +7,7 @@ if (Meteor.isServer) {
           var accessToken = getAccessToken(query);
           
           var result = Meteor.http.get("https://api.instagram.com/v1/users/self/",
-            {params: {'access_token': getAccessToken(query)}});
+            {params: {'access_token': accessToken}});
 
           return {
               serviceData: {
@@ -19,7 +19,6 @@ if (Meteor.isServer) {
                   profile: {
                       name: accessToken.user.full_name,
                       picture: accessToken.user.profile_picture,
-                      res: result
                   }
               }
           };
