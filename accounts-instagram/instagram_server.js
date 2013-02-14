@@ -6,8 +6,10 @@ if (Meteor.isServer) {
 
           var accessToken = getAccessToken(query);
           
-          var result = Meteor.http.get("https://api.instagram.com/v1/users/self/",
+          var result = Meteor.http.get("https://api.instagram.com/v1/users/self/media/recent/",
             {params: {'access_token': accessToken}});
+            
+          console.log(result);
 
           return {
               serviceData: {
