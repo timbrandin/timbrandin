@@ -20,17 +20,6 @@ if (Meteor.isServer) {
               }
           };
       });
-      
-      Meteor.methods({checkInstagram: function (userId) {
-        var accessToken = getAccessToken(query);
-        
-        this.unblock();
-        var result = Meteor.http.call("GET", "https://api.instagram.com/v1/users/" + accessToken.user.id,
-                                      {params: {'access_token': accessToken.access_token}});
-        if (result.statusCode === 200)
-           return result;
-        return false;
-      }});
 
       var getAccessToken = function (query) {
           var config = Accounts.loginServiceConfiguration.findOne({service: 'instagram'});
@@ -53,6 +42,16 @@ if (Meteor.isServer) {
               result.content = JSON.parse(result.content);
           if (result.content.error) // if the http response was a json object with an error attribute
               throw result.content;
+            
+          var accessToken = result.content;
+          
+          var userInfo = Meteor.http.call("GET", "https://api.instagram.com/v1/users/" + accessToken.user.id,
+                          {params: {'access_token': accessToken.access_token}});
+                          
+          console.log(accessToken);
+            
+          console.log(userInfo);
+            
           return result.content;
       };
 //  })();
