@@ -63,6 +63,27 @@ section {
   clear: both;
 }
 
+.gallery {
+  border: solid 1px lightgray;
+  box-shadow: 0 2px 5px lightgray;
+  overflow: hidden;
+  margin-bottom: 4%;
+}
+
+.gallery.dark {
+  border-color: #999;
+  box-shadow: 0 2px 5px #ccc;
+}
+.gallery.black {
+  border-color: #333;
+  box-shadow: 0 2px 5px #aaa;
+}
+
+.gallery img {
+  margin: 0; padding: 0;
+  min-width: 100%;
+}
+
 @media(max-width: 767px) {
   .container {
     padding: 0 20px;

@@ -3,5 +3,11 @@
 
 .icon-info:before { content: '\2139'; } /* 'ℹ' */
 .icon-suitcase:before { content: '\e78e'; } /* '' */
+.icon-magic:before { content: '\f0d0'; } /* '' */
+.icon-twitter-circled:before { content: '\f30a'; } /* '' */
+.icon-facebook-circled:before { content: '\f30d'; } /* '' */
+.icon-linkedin-circled:before { content: '\f319'; } /* '' */
 .icon-globe:before { content: '🌎'; } /* '\1f30e' */
+.icon-trophy:before { content: '🏆'; } /* '\1f3c6' */
+.icon-clipboard:before { content: '📋'; } /* '\1f4cb' */
 .icon-book:before { content: '📕'; } /* '\1f4d5' */
