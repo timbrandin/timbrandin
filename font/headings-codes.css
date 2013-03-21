@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+
+.icon-info:before { content: '\2139'; } /* 'ℹ' */
+.icon-suitcase:before { content: '\e78e'; } /* '' */
+.icon-globe:before { content: '🌎'; } /* '\1f30e' */
+.icon-book:before { content: '📕'; } /* '\1f4d5' */
