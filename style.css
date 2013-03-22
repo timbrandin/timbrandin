@@ -26,6 +26,10 @@ dd {
   width: 70%;
 }
 
+.span6 dd {
+  width: 100%;
+}
+
 span.pull-right {
   margin-left: 2%;
 }
