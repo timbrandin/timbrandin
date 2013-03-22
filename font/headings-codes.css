@@ -1,10 +1,15 @@
 @charset "UTF-8";
 
 
+.icon-drupal:before { content: '\e4'; } /* 'ä' */
 .icon-info:before { content: '\2139'; } /* 'ℹ' */
+.icon-cog:before { content: '\2699'; } /* '⚙' */
 .icon-suitcase:before { content: '\e78e'; } /* '' */
+.icon-github-circled:before { content: '\f09b'; } /* '' */
 .icon-magic:before { content: '\f0d0'; } /* '' */
+.icon-mail-alt:before { content: '\f0e0'; } /* '' */
 .icon-twitter-circled:before { content: '\f30a'; } /* '' */
+.icon-skype:before { content: '\f30b'; } /* '' */
 .icon-facebook-circled:before { content: '\f30d'; } /* '' */
 .icon-linkedin-circled:before { content: '\f319'; } /* '' */
 .icon-globe:before { content: '🌎'; } /* '\1f30e' */
