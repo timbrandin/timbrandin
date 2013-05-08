@@ -1,5 +1,5 @@
 // Helper function for font-size scaling.
-var addFontSizeScale = function() {
+Template.addFontSizeScale = function() {
   var $body;
   var setBodyScale = function() {
     if (!$body) 

@@ -1,0 +1,191 @@
+<head>
+  <title>timbrandin.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="jquery.flexslider-min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39523784-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+</head>
+
+<body>
+  {{> main}}
+</body>
+
+<template name="main">
+  <section class="top">
+    {{> top}}
+  </section>
+
+  <section>
+    <div class="container">
+      <section>
+        {{> introduction}}
+      </section>
+
+      <section>
+        {{> experience}}
+      </section>
+
+      <section>
+        {{> education}}
+      </section>
+
+      <section>
+        {{> projects}}
+      </section>
+
+      <section>
+        {{> skills}}
+      </section>
+
+      <section>
+        {{> languages}}
+      </section>
+
+      <section>
+        {{> trivia}}
+      </section>
+
+      <section>
+        {{> contact}}
+      </section>
+
+    </div>
+  </section>
+</template>
+
+<template name="top">
+  <div class="front">
+    <h1>Tim Brandin</h1>
+  </div>
+</template>
+
+<template name="introduction">
+  <h2>Tim Brandin</h2>
+
+  <div class="lead">
+    » Lead. «
+  </div>
+  <p>
+    I am a sought after creator with good knowledge of target
+    audience-tailored user experience design and the proven ability
+    to quickly turn ideas and sketches into finished and
+    commercially useful products.
+  </p>
+</template>
+
+<template name="experience">
+  <h3><i class="icon-suitcase"></i> Experience</h3>
+
+  <dl>
+    <span class="pull-right">09/2012 – Present</span>
+    <dt>Developer at Wunderkraut</dt>
+    <dd>Web development, distribution (installation profiles) development,
+      module development and theming for Drupal</dd>
+  </dl>
+</template>
+
+<template name="education">
+  <h3><i class="icon-book"></i> Education</h3>
+
+  <dl>
+    <dt>M.Sc., Interaction Design, 2010 – 2012</dt>
+    <dd>Chalmers University of Technology</dd>
+  </dl>
+</template>
+
+<template name="projects">
+  <h3><i class="icon-clipboard"></i> Projects</h3>
+
+  <dl>
+    <div class="row-fluid">
+      <div class="span4 gallery">
+        <ul class="slides">
+          <li>
+            <img src="fin2.png" />
+          </li>
+        </ul>
+      </div>
+      <div class="pull-right span8">
+        <span class="pull-right">03/2013 - Present</span>
+        <dt>Findwise <a href="http://findwise.com" target="_blank">#Show</a></dt>
+        <dd>
+          <p>A search organisation website, design to be fully customizably
+            without any static page layouts. All pages is mastered through
+            Panels, Panelizer and the In Place Editor (IPE).</p>
+          <div>3 Person Collaboration</div>
+          <p class="muted">Web development, theming, frontend architecture,
+            distribution development and CMS configuration.</p>
+        </dd>
+        <ul>
+          <li>Responsive</li>
+          <li>Panelizer & IPE</li>
+          <li>Automatic latest code on stage with Aegir & Jenkins</li>
+          <li>Installation profile, Git, CI</li>
+          <li>NodeStream 2.x</li>
+        </ul>
+      </div>
+    </div>
+  </dl>
+</template>
+
+<template name="skills">
+  <h3><i class="icon-magic"></i>Skills</h3>
+
+  <div class="columns clearfix">
+    <dl>
+      <dt>ActionScript</dt>
+    </dl>
+  </div>
+</template>
+
+<template name="languages">
+  <h3><i class="icon-globe"></i>Languages</h3>
+
+  <dl>
+    <span class="pull-right">Native Proficiency</span>
+    <dt>Swedish</dt>
+  </dl>
+</template>
+
+<template name="trivia">
+  <h3><i class="icon-trophy"></i> Trivia</h3>
+
+  <dt>Completed a Swedish Classic under less than 19 hours.</dt>
+  <dt>Finished Göteborgsvarvet more than five times.</dt>
+</template>
+
+<template name="contact">
+  <h3><i class="icon-globe"></i>Contact</h3>
+
+  <div class="">
+    <dt>Vävlagaregatan 9B • 416 58 Göteborg, Sweden</dt>
+    <p>
+      <i class="icon-mail-alt"></i> tim@sypreme.se<br />
+      <i class="icon-skype"></i>
+      <i class="icon-facebook-circled"></i> timbrandin<br />
+      <i class="icon-twitter-circled"></i>
+      <a href="https://twitter.com/timbrandin"
+         target="_blank">@timbrandin</a><br />
+      <i class="icon-drupal"></i>
+      <a href="http://drupal.org/user/738462"
+         target="_blank">TimBrandin</a><br />
+      <i class="icon-github-circled"></i>
+      <a href="https://github.com/timbrandin"
+         target="_blank">timbrandin</a><br />
+      <i class="icon-linkedin-circled"></i>
+      <a href="http://se.linkedin.com/in/timbrandin/"
+         target="_blank">timbrandin</a>
+    </p>
+  </div>
+</template>

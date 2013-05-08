@@ -1,0 +1,34 @@
+/* theme.less */
+
+.front {
+  background: url(@top-image) no-repeat top center;
+  background-size: 100% auto;
+  height: 0;
+  padding-bottom: 100%;
+  text-align: center;
+  margin-bottom: 4%;
+  h1 {
+    margin: 0;
+    padding-top: 35%;
+    font-size: 13em;
+    line-height: 1em;
+    color: #fff;
+    font-weight: normal;
+    font-family: 'Fenix';
+  }
+}
+
+.gallery {
+  border: solid 1px lightgray;
+  box-shadow: 0 2px 5px lightgray;
+  overflow: hidden;
+  margin-bottom: 4%;
+  &.dark {
+    border-color: #999;
+    box-shadow: 0 2px 5px #ccc;
+  }
+  &.black {
+    border-color: #333;
+    box-shadow: 0 2px 5px #aaa;
+  }
+}

@@ -1,21 +1,11 @@
-/* CSS declarations go here */ 
-.front {
-  background: url(front.JPG) no-repeat top center;
-  background-size: 100% auto;
-  height: 0;
-  padding-bottom: 100%;
-  text-align: center;
-  margin-bottom: 4%;
+/* layout.less */
+
+.top {
+  height: 100%;
+  overflow: hidden;
+  background: #e3e3e3;
 }
-.front h1 {
-  margin: 0;
-  padding-top: 35%;
-  font-size: 13em;
-  line-height: 1em;
-  color: #fff;
-  font-weight: normal;
-  font-family: 'Fenix';
-}
+
 body {
   padding: 0;
 }
@@ -61,26 +51,11 @@ section {
 .clearfix {
   clear: both;
 }
+
 .clearfix:after {
   content: '';
   display: block;
   clear: both;
-}
-
-.gallery {
-  border: solid 1px lightgray;
-  box-shadow: 0 2px 5px lightgray;
-  overflow: hidden;
-  margin-bottom: 4%;
-}
-
-.gallery.dark {
-  border-color: #999;
-  box-shadow: 0 2px 5px #ccc;
-}
-.gallery.black {
-  border-color: #333;
-  box-shadow: 0 2px 5px #aaa;
 }
 
 .gallery img {
