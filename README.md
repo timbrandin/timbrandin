@@ -3,7 +3,7 @@ resuméteor
 
 A LinkedIn Resumé built with Meteor.
 
-## Getting started
+## Getting started with your own Resumé
 
 ### Install meteor
     curl https://install.meteor.com | sh
