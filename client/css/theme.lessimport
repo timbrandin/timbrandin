@@ -1,5 +1,16 @@
 /* theme.less */
 
+.top {
+  /*background: #d7d7d7;*/
+  /* Firefox */
+  -moz-transition: background 1s ease-in;
+  /* WebKit */
+  -webkit-transition: background 1s ease-in;
+  /* Opera */
+  -o-transition: background 1s ease-in;
+  /* Standard */
+  transition: background 1s ease-in;
+}
 .front {
   background: url(@top-image) no-repeat top center;
   background-size: 100% auto;

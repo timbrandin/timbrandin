@@ -23,61 +23,72 @@
 
 <template name="main">
   <section class="top">
-    {{> top}}
+    <div class="front">
+      {{loginButtons}}
+      <a href="https://github.com/timbrandin/resumeteor">
+        <img style="position: absolute; top: 0; right: 0; border: 0;"
+             src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"
+             alt="Fork me on GitHub">
+      </a>
+      {{#if importedProfile}}
+        {{#with importedProfile}}
+        <h1>Hej{{name}}</h1>
+        {{/with}}
+      {{else}}
+        {{#if currentUser}}
+        <h1>{{currentUser.profile.name}}</h1>
+        {{else}}
+        <h1>Please do Sign in</h1>
+        {{/if}}
+      {{/if}}
+    </div>
+  </section>
+
+  {{#if importedProfile}}
+  <section class="profile">
+    <div class="container">
+      {{> profile}}
+    </div>
+  </section>
+  {{else}}
+    {{#if currentUser}}
+    <p class="import center"><a href="">Import Profile from LinkedIn</a></p>
+    {{/if}}
+  {{/if}}
+</template>
+
+<template name="profile">
+  <section>
+    {{> introduction}}
   </section>
 
   <section>
-    <div class="container">
-      <section>
-        {{> introduction}}
-      </section>
-
-      <section>
-        {{> experience}}
-      </section>
-
-      <section>
-        {{> education}}
-      </section>
-
-      <section>
-        {{> projects}}
-      </section>
-
-      <section>
-        {{> skills}}
-      </section>
-
-      <section>
-        {{> languages}}
-      </section>
-
-      <section>
-        {{> trivia}}
-      </section>
-
-      <section>
-        {{> contact}}
-      </section>
-
-    </div>
+    {{> experience}}
   </section>
-</template>
 
-<template name="top">
-  <div class="front">
-    <a href="https://github.com/timbrandin/resumeteor">
-      <img style="position: absolute; top: 0; right: 0; border: 0;"
-           src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"
-           alt="Fork me on GitHub">
-    </a>
-    {{#if currentUser}}
-    <h1>Tim Brandin</h1>
-    {{else}}
-    <h1 class="login">Please do Sign in</h1>
-    {{/if}}
-    {{loginButtons}}
-  </div>
+  <section>
+    {{> education}}
+  </section>
+
+  <section>
+    {{> projects}}
+  </section>
+
+  <section>
+    {{> skills}}
+  </section>
+
+  <section>
+    {{> languages}}
+  </section>
+
+  <section>
+    {{> trivia}}
+  </section>
+
+  <section>
+    {{> contact}}
+  </section>
 </template>
 
 <template name="introduction">

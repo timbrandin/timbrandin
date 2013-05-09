@@ -1,13 +1,17 @@
+Profile = new Meteor.Collection("profile");
+
+// Subscribe to 'profile' collection on startup.
+Meteor.subscribe('profile');
 
 Template.main.rendered = function() {
   Template.addFontSizeScale();
+  var now = new Date();
+  var hue = Math.round((now.getHours()*60 + now.getMinutes()) / 10);
+  $('.top').css({
+    'max-height': $(window).height(),
+    'background': 'hsl(' + hue + ', 70%, 70%)'
+  });
   $(window).load(function() {
-    var now = new Date();
-    var hue = Math.round((now.getHours()*60 + now.getMinutes()) / 10);
-    $('.top').css({
-      'max-height': $(window).height(),
-      'background': 'hsl(' + hue + ', 70%, 70%)'
-    });
     $('.gallery').flexslider({
       animation: 'slide',
       slideshow: true,
@@ -19,7 +23,17 @@ Template.main.rendered = function() {
   });
 };
 
+Template.main.importedProfile = function() {
+  return Profile.findOne({});
+};
+
+Template.main.name = function () {
+  return 'Name Lastname';
+};
+
 Template.main.events({
-  'click input' : function () {
+  'click .import a' : function (e) {
+    e.preventDefault();
+    console.log('import me');
   }
 });
