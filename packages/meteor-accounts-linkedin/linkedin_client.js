@@ -1,32 +1,29 @@
-(function () {
-  // XXX support options.requestPermissions as we do for Facebook, Google, Github, Twitter
-  Meteor.loginWithLinkedin = function (options, callback) {
-    // support both (options, callback) and (callback).
-    if (!callback && typeof options === 'function') {
-      callback = options;
-      options = {};
-    }
+Meteor.loginWithLinkedin = function (options, callback) {
+  // support both (options, callback) and (callback).
+  if (!callback && typeof options === 'function') {
+    callback = options;
+    options = {};
+  }
 
-    var config = Accounts.loginServiceConfiguration.findOne({service: 'linkedin'});
-    if (!config) {
-      callback && callback(new Accounts.ConfigError("Service not configured"));
-      return;
-    }
+  var config = Accounts.loginServiceConfiguration.findOne({service: 'linkedin'});
+  if (!config) {
+    callback && callback(new Accounts.ConfigError("Service not configured"));
+    return;
+  }
 
-    var state = Meteor.uuid();
-    // We need to keep state across the next two 'steps' so we're adding
-    // a state parameter to the url and the callback url that we'll be returned
-    // to by oauth provider
+  var state = Random.id();
 
-    // url back to app, enters "step 2" as described in
-    // packages/accounts-oauth1-helper/oauth1_server.js
-    var callbackUrl = Meteor.absoluteUrl('_oauth/linkedin?close=true&state=' + state, { replaceLocalhost: true });
+  var scope = (options && options.requestPermissions) || [];
+  var flatScope = _.map(scope, encodeURIComponent).join('+');
 
-    // url to app, enters "step 1" as described in
-    // packages/accounts-oauth1-helper/oauth1_server.js
-    var url = '/_oauth/linkedin/?requestTokenAndRedirect=' + encodeURIComponent(callbackUrl);
+  var loginUrl =
+        'https://www.linkedin.com/uas/oauth2/authorization' +
+        '?response_type=code' +
+        '&client_id=' + config.clientId +
+        '&scope=' + flatScope +
+        '&redirect_uri=' + encodeURIComponent(Meteor.absoluteUrl('_oauth/linkedin?close')) +
+        '&state=' + state;
 
-    Accounts.oauth.initiateLogin(state, url, callback);
-  };
+  Accounts.oauth.initiateLogin(state, loginUrl, callback, {width: 500, height: 450});
 
-})();
+};

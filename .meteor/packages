@@ -9,8 +9,11 @@ preserve-inputs
 bootstrap
 jquery
 accounts-base
-accounts-oauth2-helper
 http
 templating
 accounts-ui
 less
+accounts-facebook
+accounts-meetup
+accounts-google
+accounts-github

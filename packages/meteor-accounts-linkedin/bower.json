@@ -1,9 +1,8 @@
 {
   "name": "meteor-accounts-linkedin",
-  "version": "0.0.0",
-  "commit": "e70d991203ce07e64a43f05b2aa0d921371a70b6",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "git@github.com:zealoushacker/meteor-accounts-linkedin.git"
+    "url": "git@github.com:timbrandin/meteor-accounts-linkedin.git"
   }
 }
