@@ -1,3 +1,5 @@
 .DS_Store
 public/
 !public/jquery.flexslider-min.js
+components/
+nbproject/

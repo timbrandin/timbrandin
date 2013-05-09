@@ -1,0 +1,8 @@
+{
+  "name": "meteor-accounts-instagram",
+  "version": "0.2.1",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:motro/meteor-accounts-instagram.git"
+  }
+}
