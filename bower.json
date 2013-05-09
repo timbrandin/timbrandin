@@ -3,6 +3,6 @@
   "version": "0.5.0",
   "dependencies": {
     "meteor-accounts-linkedin": "git@github.com:zealoushacker/meteor-accounts-linkedin.git",
-    "meteor-accounts-instagram": "git@github.com:motro/meteor-accounts-instagram.git"
+    "meteor-accounts-instagram": "git@github.com:motro/meteor-accounts-instagram.git#v0.2.1"
   }
 }
