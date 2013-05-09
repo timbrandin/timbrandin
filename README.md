@@ -12,7 +12,7 @@ A LinkedIn Resumé built with Meteor.
     git clone git@github.com:timbrandin/resumeteor YOURNAME
     cd YOURNAME
 
-### We use Bower (http://bower.io) for package managing for dependecies in this project, so we need to install bower globally first.
+### We use Bower (http://bower.io) for package managing the dependecies in this project, so we need to install bower globally first.
     (sudo) npm install -g bower
 
 ### Then download and install all dependencies with bower.
