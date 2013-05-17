@@ -21,11 +21,16 @@
 </body>
 
 <template name="main">
+
+  {{#if showCreateDialog}}
+    {{> createDialog}}
+  {{/if}}
+
   <section class="top">
     <div class="front">
       {{loginButtons}}
       <a href="https://github.com/timbrandin/resumeteor">
-        <img style="position: absolute; top: 0; right: 0; border: 0;"
+        <img class="fork-me"
              src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"
              alt="Fork me on GitHub">
       </a>
@@ -97,6 +102,13 @@
   <div class="lead">
     » {{headline}}. «
   </div>
+  <div class="pull-left picture">
+    <ul class="slides">
+      <li>
+        <img src="{{pictureUrl}}" width="60"/>
+      </li>
+    </ul>
+  </div>
   <p>
     {{summary}}
   </p>
@@ -141,8 +153,15 @@
 </template>
 
 <template name="projects">
+  {{#if currentUser}}
+  <div class="pull-right">
+    <a class="create" href="javascript:;">
+      <i class="icon-feather"></i>Add a project...</a>
+  </div>
+  {{/if}}
   <h3><i class="icon-clipboard"></i> Projects</h3>
 
+  {{#each projects}}
   <dl>
     <div class="row-fluid">
       <div class="span4 gallery">
@@ -153,45 +172,65 @@
         </ul>
       </div>
       <div class="pull-right span8">
-        <span class="pull-right">03/2013 - Present</span>
-        <dt>Findwise <a href="http://findwise.com" target="_blank">#Show</a></dt>
+        <span class="pull-right">{{dateFormat startDate }} –
+          {{#if isCurrent}}
+            Present ({{dateLength startDate}})
+          {{else}}
+            {{dateFormat endDate }} ({{dateLength startDate endDate}})
+          {{/if}}
+        </span>
+        {{#if skills.values}}
+          <p class="muted clearfix pull-right">
+            {{join skills.values}}
+          </p>
+        {{/if}}
+        {{#if team}}
+          <div class="muted clearfix pull-right">
+            {{team}} Person Collaboration
+          </div>
+        {{/if}}
+        <dt><h4>{{name}}
+          <a href="{{url}}" target="_blank">#Show</a><h4></dt>
         <dd>
-          <p>A search organisation website, design to be fully customizably
-            without any static page layouts. All pages is mastered through
-            Panels, Panelizer and the In Place Editor (IPE).</p>
-          <div>3 Person Collaboration</div>
-          <p class="muted">Web development, theming, frontend architecture,
-            distribution development and CMS configuration.</p>
+          <p>{{description}}</p>
+          {{#if features.values}}
+            <div class="features">
+              <h5>Features</h5>
+              <ul>
+                {{#each features.values}}
+                <li>{{this}}</li>
+                {{/each}}
+              </ul>
+            </div>
+          {{/if}}
         </dd>
-        <ul>
-          <li>Responsive</li>
-          <li>Panelizer & IPE</li>
-          <li>Automatic latest code on stage with Aegir & Jenkins</li>
-          <li>Installation profile, Git, CI</li>
-          <li>NodeStream 2.x</li>
-        </ul>
       </div>
     </div>
   </dl>
+  {{/each}}
 </template>
 
 <template name="skills">
   <h3><i class="icon-magic"></i>Skills</h3>
 
   <div class="columns clearfix">
+    {{#each importedProfile.skills.values}}
     <dl>
-      <dt>ActionScript</dt>
+      <dt>{{skill.name}}</dt>
     </dl>
+    {{/each}}
   </div>
 </template>
 
 <template name="languages">
   <h3><i class="icon-globe"></i>Languages</h3>
 
+  {{#each importedProfile.languages.values}}
   <dl>
-    <span class="pull-right">Native Proficiency</span>
-    <dt>Swedish</dt>
+    <span class="pull-right">{{proficiency.name}}</span>
+    <dt>{{language.name}}</dt>
   </dl>
+  {{/each}}
 </template>
 
 <template name="trivia">
@@ -223,5 +262,31 @@
       <a href="http://se.linkedin.com/in/timbrandin/"
          target="_blank">timbrandin</a>
     </p>
+  </div>
+</template>
+
+<template name="createDialog">
+  <div class="mask"> </div>
+  <div class="modal">
+    {{#with type}}
+    <div class="modal-header">
+      <button type="button" class="close cancel">&times;</button>
+      <h3>Add a {{title}}</h3>
+    </div>
+
+    <div class="modal-body">
+
+      {{#if error}}
+        <div class="alert alert-error">{{error}}</div>
+      {{/if}}
+
+      {{form fields}}
+    </div>
+
+    <div class="modal-footer">
+      <a href="#" class="btn cancel">Cancel</a>
+      <a href="#" class="btn btn-primary save">Add {{title}}</a>
+    </div>
+    {{/with}}
   </div>
 </template>

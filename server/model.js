@@ -1,6 +1,8 @@
 
 Profile = new Meteor.Collection("profile");
 
+Projects = new Meteor.Collection("projects");
+
 Meteor.methods({
   createProfile: function(options) {
     var user = Meteor.user();
@@ -23,7 +25,7 @@ Meteor.methods({
 
 var getProfile = function (id, accessToken) {
   var result = Meteor.http.get(
-    "https://api.linkedin.com/v1/people/~:(id,first-name,last-name,headline,picture-url,summary,associations,positions,specialties,honors,interests,skills,educations,courses,recommendations-received,phone-numbers)", {
+    "https://api.linkedin.com/v1/people/~:(id,first-name,last-name,headline,picture-url,summary,associations,positions,specialties,honors,interests,skills,educations,courses,recommendations-received,phone-numbers,languages:(language,proficiency),certifications)", {
       params: {
         oauth2_access_token: accessToken,
         format: 'json'
