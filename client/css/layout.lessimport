@@ -113,3 +113,26 @@ p i[class^="icon-"] {
     margin-top: 6%;
   }
 }
+
+.picture {
+  margin-right: 20px;
+  margin-top: 4px;
+}
+
+.features {
+  margin-top: 20px;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  background: none;
+  width: 40px;
+  position: relative;
+  top: 1px;
+}
+
+a [class^="icon-"],
+a [class*=" icon-"] {
+  width: 24px;
+  top: 0;
+}
