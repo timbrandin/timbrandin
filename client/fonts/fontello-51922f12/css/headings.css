@@ -1,9 +1,12 @@
 @charset "UTF-8";
 
-@font-face {
+ @font-face {
   font-family: 'headings';
-  src: url("headings.eot?80694456");
-  src: url("headings.eot?80694456#iefix") format('embedded-opentype'), url("headings.woff?80694456") format('woff'), url("headings.ttf?80694456") format('truetype'), url("headings.svg?80694456#headings") format('svg');
+  src: url('../font/headings.eot?21188036');
+  src: url('../font/headings.eot?21188036#iefix') format('embedded-opentype'),
+       url('../font/headings.woff?21188036') format('woff'),
+       url('../font/headings.ttf?21188036') format('truetype'),
+       url('../font/headings.svg?21188036#headings') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -13,47 +16,48 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'headings';
-    src: url('../headings.svg?80694456#headings') format('svg');
+    src: url('../font/headings.svg?21188036#headings') format('svg');
   }
 }
 */
-[class^="icon-"],
-[class*=" icon-"] {
-  background: none;
-  width: 40px;
-  position: relative;
-  top: 1px;
-}
-
-[class^="icon-"]:before,
-[class*=" icon-"]:before {
-  font-family: 'headings';
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "headings";
   font-style: normal;
   font-weight: normal;
   speak: none;
+ 
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
-  margin-right: 0.2em;
+  margin-right: .2em;
   text-align: center;
-/* opacity .8 */
-/* For safety - reset parent styles, that can break glyph codes*/
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
   font-variant: normal;
   text-transform: none;
-/* fix buttons height, for twitter bootstrap */
+     
+  /* fix buttons height, for twitter bootstrap */
   line-height: 1em;
-/* Animation center compensation - magrins should be symmetric */
-/* remove if not needed */
-  margin-left: 0.2em;
-/* you can be more comfortable with increased icons size */
-  /*font-size: 150%;*/ 
-/* Uncomment for 3D effect */
-/* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+ 
+  /* Animation center compensation - magrins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
-
+ 
 .icon-drupal:before { content: '\e4'; } /* 'ä' */
 .icon-info:before { content: '\2139'; } /* 'ℹ' */
+.icon-menu:before { content: '\e802'; } /* '' */
+.icon-layout:before { content: '\e801'; } /* '' */
 .icon-cog:before { content: '\2699'; } /* '⚙' */
+.icon-feather:before { content: '\e800'; } /* '' */
 .icon-suitcase:before { content: '\e78e'; } /* '' */
 .icon-github-circled:before { content: '\f09b'; } /* '' */
 .icon-magic:before { content: '\f0d0'; } /* '' */
