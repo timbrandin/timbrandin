@@ -1,4 +1,4 @@
 resumeteor
 ==========
 
-A LinkedIn Resumé built with Meteor.
+A resumé built with Meteor.
