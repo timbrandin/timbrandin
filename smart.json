@@ -1,0 +1,9 @@
+{
+  "packages": {
+    "accounts-linkedin": {},
+    "fast-render": {},
+    "moment": {},
+    "bootstrap-3": {},
+    "iron-router": {}
+  }
+}

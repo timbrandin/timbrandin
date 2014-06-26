@@ -1,0 +1,10 @@
+<template name="languages">
+  <h3><i class="icon-globe"></i>Languages</h3>
+
+  {{#each importedProfile.languages.values}}
+  <dl>
+    <span class="pull-right">{{proficiency.name}}</span>
+    <dt>{{language.name}}</dt>
+  </dl>
+  {{/each}}
+</template>

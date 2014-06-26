@@ -1,0 +1,25 @@
+<template name="main">
+  <header class="jumbotron">
+    {{> switch}}
+  </header>
+
+  <div class="container">
+    {{> introduction}}
+  </div>
+
+  {{> timeline}}
+
+  {{> skills}}
+
+  <section>
+    {{> contact}}
+  </section>
+</template>
+
+<template name="switch">
+  <div class="switch">
+    <span class="selector"></span>
+    <span class="option night">NIGHT</span>
+    <span class="option day">DAY</span>
+  </div>
+</template>
