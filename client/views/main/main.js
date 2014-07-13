@@ -20,21 +20,40 @@ Template.main.rendered = function() {
 
     $('.switch .option').click(function() {
       if ($(this).is('.day')) {
-        $body.removeClass('night print');
-        $body.addClass('day');
-        $('.pagebreak').remove();
-        $window.trigger('load');
+        $jumbotron.addClass('cover');
+        setTimeout(function() {
+          $body.removeClass('night print');
+          $body.addClass('day');
+          $('.pagebreak').remove();
+          $window.trigger('load');
+          $window.trigger('resize');
+          // $body.removeClass('ready');
+          setTimeout(function() {
+            // $body.addClass('ready');
+            $jumbotron.removeClass('cover');
+          }, 300);
+        }, 300);
       }
       else if ($(this).is('.night')) {
-        $body.removeClass('day print');
-        $body.addClass('night');
-        $('.pagebreak').remove();
-        $window.trigger('load');
+        $jumbotron.addClass('cover');
+        setTimeout(function() {
+          $body.removeClass('day print');
+          $body.addClass('night');
+          $('.pagebreak').remove();
+          $window.trigger('load');
+          $window.trigger('resize');
+          // $body.removeClass('ready');
+          setTimeout(function() {
+            // $body.addClass('ready');
+            $jumbotron.removeClass('cover');
+          }, 300);
+        }, 300);
       }
       else if ($(this).is('.print')) {
-        $body.removeClass('day night');
+        $body.removeClass('day night ready');
         $body.addClass('print');
         $window.trigger('load');
+        $window.trigger('resize');
       }
     });
 
@@ -42,6 +61,7 @@ Template.main.rendered = function() {
       // All is loaded.
       $body.addClass('ready');
 
+      $window.unbind('resize');
       $window.bind('resize', function() {
         // Make sure entries do not overlap.
         var i = 1;
@@ -121,6 +141,7 @@ Template.main.rendered = function() {
 
         }).trigger('resize');
 
+        $window.unbind('scroll');
         $window.bind('scroll', function() {
           // Slow down scroll of jumbotron-background if day.
           if ($body.is('.day')) {
