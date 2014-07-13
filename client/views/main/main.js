@@ -109,7 +109,7 @@ Template.main.rendered = function() {
               // });
               // $('body').prepend($d);
 
-              var extraMargin = pageBreak - (offset + height) + 25;//Math.max(0, offset + height - pageBreak);
+              var extraMargin = pageBreak - (offset + height);
               // if (extraMargin > 0) {
                 var $pre = $('<li class="pagebreak"></li>').attr('style',
                   'margin-top: ' + (extraMargin) + 'px !important;');
