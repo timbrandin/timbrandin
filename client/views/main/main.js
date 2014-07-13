@@ -65,46 +65,59 @@ Template.main.rendered = function() {
       $window.bind('resize', function() {
         // Make sure entries do not overlap.
         var i = 1;
-        $oddLiElements.each(function(i, el) {
-          var $self = $(this);
-          var $left = $self.find('article');
-          var $right = $self.next('li').find('article');
-          var extraMargin = Math.max(0, 120 - ($right.offset().top - $left.offset().top));
-          $right.parent('li').css({
-            'margin-top': extraMargin + 60,
+        if (!$body.is('.print')) {
+          $oddLiElements.each(function(i, el) {
+            var $self = $(this);
+            var $left = $self.find('article');
+            var $right = $self.next('li').find('article');
+            var extraMargin = Math.max(0, 120 - ($right.offset().top - $left.offset().top));
+            $right.parent('li').css({
+              'margin-top': extraMargin + 60,
+            });
           });
-        });
+        }
 
         var pageSize = 960;
-        var pageMargin = 40;
-        var page = 1;
+        var pageMargin = 42;
+        var page = 0;
+        var prevPage = 0;
         $('.pagebreak').remove();
         $('.print .timeline li').each(function() {
           var $self = $(this);
           var $article = $self.find('article');
           if ($article.length > 0) {
-            $self.removeAttr('style');
+            var $prev = $self.prev('li');
+            $prev.removeAttr('style');
             var offset = $article.offset().top;
             var height = $article.height();
-            var page = Math.floor((offset - pageSize) / (pageSize + pageMargin)) + 1;
-            var pageBreak = pageSize + page * (pageSize + pageMargin / 2);
-            var $d = $('<div></div>');
-            // Print bageBreaks.
-            // $d.css({
-            //   'position': 'absolute',
-            //   'top': pageBreak,
-            //   'width': '100%',
-            //   'border-top': 'solid 1px red'
-            // });
-            // $('body').prepend($d);
-            var extraMargin = Math.max(0, offset + height - pageBreak);
-            if (extraMargin > 0) {
-              var $pre = $('<li class="pagebreak"></li>').css({
-                'margin-top': extraMargin - pageMargin / 2
-              });
-              $self.before($pre);
-              $self.attr('style', 'page-break-before: always;');
+            var page = Math.floor((offset + height - pageSize) / (pageSize + pageMargin)) + 1;
+
+            if (page != prevPage) {
+
+              $article = $prev.find('article');
+              offset = $article.offset().top;
+              height = $article.height();
+
+              var pageBreak = pageSize + (page - 1) * (pageSize + pageMargin / 2 + 1) + pageMargin / 2;
+              var $d = $('<div></div>');
+              // Print bageBreaks.
+              // $d.css({
+              //   'position': 'absolute',
+              //   'top': pageBreak,
+              //   'width': '100%',
+              //   'border-top': 'solid 1px red'
+              // });
+              // $('body').prepend($d);
+
+              var extraMargin = pageBreak - (offset + height) + 25;//Math.max(0, offset + height - pageBreak);
+              // if (extraMargin > 0) {
+                var $pre = $('<li class="pagebreak"></li>').attr('style',
+                  'margin-top: ' + (extraMargin) + 'px !important;');
+                $self.before($pre);
+                $prev.attr('style', 'page-break-before: always;');
+              // }
             }
+            prevPage = page;
           }
         });
 
