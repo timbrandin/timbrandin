@@ -27,9 +27,7 @@ Template.main.rendered = function() {
           $('.pagebreak').remove();
           $window.trigger('load');
           $window.trigger('resize');
-          // $body.removeClass('ready');
           setTimeout(function() {
-            // $body.addClass('ready');
             $jumbotron.removeClass('cover');
           }, 300);
         }, 300);
@@ -42,9 +40,8 @@ Template.main.rendered = function() {
           $('.pagebreak').remove();
           $window.trigger('load');
           $window.trigger('resize');
-          // $body.removeClass('ready');
           setTimeout(function() {
-            // $body.addClass('ready');
+            $window.trigger('resize');
             $jumbotron.removeClass('cover');
           }, 300);
         }, 300);
@@ -53,7 +50,10 @@ Template.main.rendered = function() {
         $body.removeClass('day night ready');
         $body.addClass('print');
         $window.trigger('load');
-        $window.trigger('resize');
+        $jumbotron.removeClass('cover');
+        setTimeout(function() {
+          $window.trigger('resize');
+        }, 300);
       }
     });
 
@@ -80,43 +80,33 @@ Template.main.rendered = function() {
         var pageSize = 960;
         var pageMargin = 42;
         var page = 0;
+        var i = 0;
+        var added = 0;
         var prevPage = 0;
-        $('.pagebreak').remove();
         $('.print .timeline li').each(function() {
           var $self = $(this);
           var $article = $self.find('article');
+          // Find the page
           if ($article.length > 0) {
             var $prev = $self.prev('li');
-            $prev.removeAttr('style');
             var offset = $article.offset().top;
-            var height = $article.height();
+            var height = $article.outerHeight();
             var page = Math.floor((offset + height - pageSize) / (pageSize + pageMargin)) + 1;
 
             if (page != prevPage) {
 
               $article = $prev.find('article');
-              offset = $article.offset().top;
-              height = $article.height();
-
+              var offset2 = $article.offset().top;
+              var height2 = $article.outerHeight();
               var pageBreak = pageSize + (page - 1) * (pageSize + pageMargin / 2 + 1) + pageMargin / 2;
-              var $d = $('<div></div>');
-              // Print bageBreaks.
-              // $d.css({
-              //   'position': 'absolute',
-              //   'top': pageBreak,
-              //   'width': '100%',
-              //   'border-top': 'solid 1px red'
-              // });
-              // $('body').prepend($d);
+              var extraMargin = pageBreak - (offset2 + height2);
 
-              var extraMargin = pageBreak - (offset + height);
-              // if (extraMargin > 0) {
-                var $pre = $('<li class="pagebreak"></li>').attr('style',
-                  'margin-top: ' + (extraMargin) + 'px !important;');
-                $self.before($pre);
-                $prev.attr('style', 'page-break-before: always;');
-              // }
+              if (extraMargin > 0) {
+                $prev.attr('style', 'page-break-after: always; margin-bottom: 0;');
+                $self.attr('style', 'page-break-before: always;');
+              }
             }
+
             prevPage = page;
           }
         });
@@ -178,7 +168,9 @@ Template.main.rendered = function() {
         });
       }).trigger('scroll');
 
-      $img.attr('src', src);
+      if (src != 'none') {
+        $img.attr('src', src);
+      }
     });
   }
 };

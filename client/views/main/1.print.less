@@ -5,15 +5,6 @@ body .print {
 body.print {
   background: none !important;
 
-  .pagebreak {
-    display: none;
-    padding: 0 !important;
-
-    @media print {
-      display: block;
-    }
-  }
-
   .switch {
     @media print {
       display: none;
@@ -56,13 +47,30 @@ body.print {
     padding: 0 10px;
   }
 
+  @width: 650px;
+
   & > section,
   header,
-  .container {
+  & > .container {
+    page-break-inside: avoid;
     width: auto !important;
     margin-left: auto;
     margin-right: auto;
-    max-width: 640px !important;
+    width: @width;
+    min-width: @width;
+    max-width: @width;
+
+    .container {
+      width: 100%;
+      min-width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .timeline li {
+    page-break-inside: avoid;
+
+
   }
 
   article,
