@@ -292,7 +292,7 @@ article li {
     clear: right;
     padding-left: 38px;
     padding-right: 0;
-    margin-top: 30px;
+    margin-top: 30px !important;
   }
 
   .timeline > li:nth-child(odd) .entry,
@@ -327,6 +327,73 @@ article li {
   .timeline > li:nth-child(even) .year {
     width: 30px;
     margin-left: -15px;
+  }
+
+  article .meta b {
+    display: inline-block;
+    max-width: 70%;
+  }
+}
+
+.print {
+  .timeline-wrapper .start {
+    left: 69px;
+    border-radius: 0;
+  }
+
+  .timeline-wrapper:before {
+    left: 20px;
+  }
+
+  .timeline {
+    padding-top: 40px;
+  }
+
+  .timeline > li {
+    width: 100%;
+  }
+
+  .timeline > li:nth-child(odd),
+  .timeline > li:nth-child(even) {
+    float: right;
+    clear: right;
+    padding-left: 38px;
+    padding-right: 0;
+    margin-top: 30px !important;
+  }
+
+  .timeline > li:nth-child(odd) .entry,
+  .timeline > li:nth-child(even) .entry {
+    right: auto;
+    margin-right: auto;
+    left: 0;
+    margin-left: -8px;
+    border: solid 2px white;
+    padding-top: 10px;
+  }
+
+  .night .timeline > li:nth-child(odd) .entry,
+  .night .timeline > li:nth-child(even) .entry {
+    border-color: black;
+  }
+
+  .timeline > li:nth-child(odd) .entry.present,
+  .timeline > li:nth-child(even) .entry.present {
+    right: auto;
+    margin-right: auto;
+    left: 0;
+    margin-left: -10px;
+    padding-top: 20px;
+  }
+
+  .timeline > li:nth-child(odd) .line {
+    right: auto;
+    left: 0;
+  }
+
+  .timeline > li:nth-child(even) .year {
+    width: 45px;
+    margin-left: -16px;
   }
 
   article .meta b {

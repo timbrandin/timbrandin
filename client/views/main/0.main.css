@@ -237,6 +237,12 @@ ul, li {
   left: 46px;
 }
 
+.print .switch .selector {
+  left: 89px;
+}
+
+.night .option.print,
+.day .option.print,
 .night .option.day,
 .day .option.night {
   -webkit-transition: all 0.2s ease-out 0s;
