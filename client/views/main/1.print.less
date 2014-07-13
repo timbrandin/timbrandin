@@ -5,6 +5,14 @@ body .print {
 body.print {
   background: none !important;
 
+  .pagebreak {
+    display: none;
+
+    @media print {
+      display: block;
+    }
+  }
+
   .switch {
     @media print {
       display: none;

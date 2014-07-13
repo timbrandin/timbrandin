@@ -22,66 +22,73 @@ Template.main.rendered = function() {
       if ($(this).is('.day')) {
         $body.removeClass('night print');
         $body.addClass('day');
-        $window.trigger('resize');
+        $('.pagebreak').remove();
+        $window.trigger('load');
       }
       else if ($(this).is('.night')) {
         $body.removeClass('day print');
         $body.addClass('night');
-        $window.trigger('resize');
+        $('.pagebreak').remove();
+        $window.trigger('load');
       }
       else if ($(this).is('.print')) {
         $body.removeClass('day night');
         $body.addClass('print');
-        $window.trigger('resize');
+        $window.trigger('load');
       }
     });
-
-    $window.bind('resize', function() {
-      // Make sure entries do not overlap.
-      var i = 1;
-      $oddLiElements.each(function(i, el) {
-        var $self = $(this);
-        var $left = $self.find('article');
-        var $right = $self.next('li').find('article');
-        var extraMargin = Math.max(0, 120 - ($right.offset().top - $left.offset().top));
-        $right.parent('li').css({
-          'margin-top': extraMargin + 60,
-        });
-      });
-
-      var pageSize = 960;
-      var pageMargin = 40;
-      var page = 1;
-      $('.print .timeline li').each(function() {
-        var $self = $(this);
-        var $article = $self.find('article');
-        if ($article.length > 0) {
-          $self.removeAttr('style');
-          var offset = $article.offset().top;
-          var height = $article.height();
-          var page = Math.floor((offset - pageSize) / (pageSize + pageMargin)) + 1;
-          var pageBreak = pageSize + page * (pageSize + pageMargin / 2);
-          var $d = $('<div></div>');
-          // Print bageBreaks.
-          // $d.css({
-          //   'position': 'absolute',
-          //   'top': pageBreak,
-          //   'width': '100%',
-          //   'border-top': 'solid 1px red'
-          // });
-          // $('body').prepend($d);
-          var extraMargin = Math.max(0, offset + height - pageBreak);
-          if (extraMargin > 0) {
-            $self.attr('style', 'margin-top: ' + (extraMargin - pageMargin / 2) + 'px !important; page-break-before: always;');
-          }
-        }
-      });
-
-    }).trigger('resize');
 
     $window.load(function() {
       // All is loaded.
       $body.addClass('ready');
+
+      $window.bind('resize', function() {
+        // Make sure entries do not overlap.
+        var i = 1;
+        $oddLiElements.each(function(i, el) {
+          var $self = $(this);
+          var $left = $self.find('article');
+          var $right = $self.next('li').find('article');
+          var extraMargin = Math.max(0, 120 - ($right.offset().top - $left.offset().top));
+          $right.parent('li').css({
+            'margin-top': extraMargin + 60,
+          });
+        });
+
+        var pageSize = 960;
+        var pageMargin = 40;
+        var page = 1;
+        $('.pagebreak').remove();
+        $('.print .timeline li').each(function() {
+          var $self = $(this);
+          var $article = $self.find('article');
+          if ($article.length > 0) {
+            $self.removeAttr('style');
+            var offset = $article.offset().top;
+            var height = $article.height();
+            var page = Math.floor((offset - pageSize) / (pageSize + pageMargin)) + 1;
+            var pageBreak = pageSize + page * (pageSize + pageMargin / 2);
+            var $d = $('<div></div>');
+            // Print bageBreaks.
+            // $d.css({
+            //   'position': 'absolute',
+            //   'top': pageBreak,
+            //   'width': '100%',
+            //   'border-top': 'solid 1px red'
+            // });
+            // $('body').prepend($d);
+            var extraMargin = Math.max(0, offset + height - pageBreak);
+            if (extraMargin > 0) {
+              var $pre = $('<li class="pagebreak"></li>').css({
+                'margin-top': extraMargin - pageMargin / 2
+              });
+              $self.before($pre);
+              $self.attr('style', 'page-break-before: always;');
+            }
+          }
+        });
+
+      }).trigger('resize');
 
       var $img = $(new Image());
       var src = $jumbotron.css('background-image');
@@ -106,7 +113,7 @@ Template.main.rendered = function() {
               'background-position': 'center ' + ($window.scrollTop()/2 - top/1) + 'px'
             });
           }
-          else {
+          else if ($body.is('.night')) {
             $jumbotron.css({
               'background-position': '50% 35%'
             });
