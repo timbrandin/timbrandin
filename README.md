@@ -1,4 +1,4 @@
-resumeteor
+ResuMeteor
 ==========
 
 A resumé built with Meteor.
