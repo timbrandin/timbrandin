@@ -323,3 +323,8 @@ dl.skills dt {
   font-size: 13px;
   font-weight: 800;
 }
+
+.day .skills dt {
+  background: #000;
+  color: #FFF;
+}

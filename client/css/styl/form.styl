@@ -1,0 +1,113 @@
+label
+  color #fff
+  font-weight 500
+  display block
+  -webkit-user-select none
+  -ms-user-select none
+  user-select none
+  padding-bottom .4em
+  max-width 550px
+
+select, textarea, input[type="text"], input[type="password"],
+input[type="file"], input[type="datetime"], input[type="datetime-local"],
+input[type="date"], input[type="month"], input[type="time"],
+input[type="week"], input[type="number"], input[type="email"],
+input[type="url"], input[type="search"], input[type="tel"], input[type="color"]
+  display inline-block
+  padding 0 .4em 0 .4em
+  font-size 16px
+  color white
+  margin-bottom 2em
+  vertical-align middle
+  border-radius 3px
+  box-sizing border-box
+  min-width 50px
+  max-width 550px
+
+textarea, input[type="text"], input[type="password"], input[type="file"],
+input[type="date"], input[type="number"], input[type="email"], input[type="url"],
+input[type="search"], input[type="tel"]
+  width 100%
+  min-height 36px
+  background-color #222
+  border 2px solid #555
+  margin 0 0 24px 0
+
+input[type="text"], input[type="number"],
+input[type="email"], input[type="url"],
+input[type="tel"], input[type="password"]
+  width 100%
+  max-width 550px
+  position relative
+  margin 0 0 24px 0
+
+input[type="text"]~.field-help,
+input[type="number"]~.field-help,
+input[type="email"]~.field-help,
+input[type="url"]~.field-help,
+input[type="tel"]~.field-help,
+input[type="password"]~.field-help
+  -webkit-transition all .25s ease-in-out 0
+  -ms-transition all .25s ease-in-out 0
+  transition all .25s ease-in-out 0
+  display block
+  opacity 0
+  max-height 0
+  top -1.1538461538461537em
+  overflow hidden
+
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus,
+input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus,
+input[type="search"]:focus, input[type="tel"]:focus
+  border 2px solid #48e089
+  outline none
+
+textarea.error, input[type="text"].error, input[type="password"].error,
+input[type="file"].error, input[type="datetime"].error, input[type="date"].error,
+input[type="number"].error, input[type="email"].error, input[type="url"].error,
+input[type="search"].error, input[type="tel"].error
+  border 2px solid #E85C41
+
+input[type="text"]~.error,
+input[type="number"]~.error,
+input[type="email"]~.error,
+input[type="url"]~.error,
+input[type="tel"]~.error,
+input[type="password"]~.error
+  opacity 1
+  max-height 200px
+
+input[type="text"]:focus~.field-help,
+input[type="number"]:focus~.field-help,
+input[type="email"]:focus~.field-help,
+input[type="url"]:focus~.field-help,
+input[type="tel"]:focus~.field-help,
+input[type="password"]:focus~.field-help,
+textarea:focus~.field-help,
+input[type="text"]:active~.field-help,
+input[type="number"]:active~.field-help,
+input[type="email"]:active~.field-help,
+input[type="url"]:active~.field-help,
+input[type="tel"]:active~.field-help,
+input[type="password"]:active~.field-help,
+textarea:active~.field-help
+  opacity 1
+  max-height 200px
+
+.field-help
+  font-size 14px
+  line-height 20px
+  font-weight 700
+  position relative
+  color #ccc
+
+input:-webkit-autofill
+  -webkit-box-shadow 0 0 0px 1000px #FAFFBD inset
+  border-color #FAFFBD
+
+form .btn
+  font-size 14px
+  margin 0
+
+fieldset
+  margin-bottom 16px

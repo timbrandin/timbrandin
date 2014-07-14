@@ -5,6 +5,7 @@
     "fast-render": {},
     "moment": {},
     "bootstrap-3": {},
-    "iron-router": {}
+    "iron-router": {},
+    "jq-knob": {}
   }
 }
