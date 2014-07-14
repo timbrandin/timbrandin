@@ -325,6 +325,6 @@ dl.skills dt {
 }
 
 .day .skills dt {
-  background: #000;
-  color: #FFF;
+  background: #ddd;
+  color: #000;
 }
