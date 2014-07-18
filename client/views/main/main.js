@@ -123,43 +123,41 @@ Template.main.rendered = function() {
 
         $window.bind('resize', function() {
           // Set nice height.
-          var h = $window.height() - $firstSection.height() - 40 - ($body.is('.day') ? 65 : 0);
-          $jumbotron.css({height: h});
+          var h = $window.height() - $firstSection.height();
+          $jumbotron.css({
+            'height': Math.min(600, h),
+            'min-height': Math.min(600, h)
+          });
 
-          if ($body.is('.day')) {
-            // Calculate top to center background depending on the cover effect.
-            var width = Math.max($jumbotron.width(), image.width);
-            var scaleX = width / $jumbotron.width();
-            var height = Math.max($jumbotron.height(), image.height / scaleX);
-            var top = (height - $jumbotron.height()) / 2;
+          // Calculate top to center background depending on the cover effect.
+          var width = Math.max($jumbotron.width(), image.width);
+          var scaleX = width / $jumbotron.width();
+          var height = Math.max($jumbotron.height(), image.height / scaleX);
+          var top = (height - $jumbotron.height()) / 2;
+          if ($('body').is('.night')) {
+            top *= $jumbotron.width() / image.width - 0.1;
+          }
 
-            $jumbotron.css({
-              'background-position': 'center ' + ($window.scrollTop()/2 - top/1) + 'px'
-            });
-          }
-          else if ($body.is('.night')) {
-            $jumbotron.css({
-              'background-position': '50% 35%'
-            });
-          }
+          $jumbotron.css({
+            'background-position': 'center ' + ($window.scrollTop()/3 - top/1) + 'px'
+          });
 
         }).trigger('resize');
 
         $window.unbind('scroll');
         $window.bind('scroll', function() {
-          // Slow down scroll of jumbotron-background if day.
-          if ($body.is('.day')) {
-
-            // Calculate top to center background depending on the cover effect.
-            var width = Math.max($jumbotron.width(), image.width);
-            var scaleX = width / $jumbotron.width();
-            var height = Math.max($jumbotron.height(), image.height / scaleX);
-            var top = (height - $jumbotron.height()) / 2;
-
-            $jumbotron.css({
-              'background-position': 'center ' + ($window.scrollTop()/2 - top/1) + 'px',
-            });
+          // Calculate top to center background depending on the cover effect.
+          var width = Math.max($jumbotron.width(), image.width);
+          var scaleX = width / $jumbotron.width();
+          var height = Math.max($jumbotron.height(), image.height / scaleX);
+          var top = (height - $jumbotron.height()) / 2;
+          if ($('body').is('.night')) {
+            top *= $jumbotron.width() / image.width - 0.1;
           }
+
+          $jumbotron.css({
+            'background-position': 'center ' + ($window.scrollTop()/3 - top/1) + 'px',
+          });
 
           // Fade out on scroll.
           $jumbotron.css({
