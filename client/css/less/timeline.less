@@ -13,7 +13,17 @@
 .timeline article,
 .timeline-wrapper .start,
 .timeline-wrapper:before {
-  transition: all 0.3s ease-in-out 0;
+  transition: none;
+}
+
+body:not(.print) .entry.present,
+body:not(.print) .timeline .entry,
+body:not(.print) .timeline .year,
+body:not(.print) .timeline .line,
+body:not(.print) .timeline article,
+body:not(.print) .timeline-wrapper .start,
+body:not(.print) .timeline-wrapper:before {
+  transition: background 0.1s ease-in-out 0, color 0.1s ease-in-out 0, border 0.1s ease-in-out 0;
 }
 
 .timeline-wrapper:before {

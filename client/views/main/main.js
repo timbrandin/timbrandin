@@ -25,10 +25,8 @@ Template.main.rendered = function() {
           $body.removeClass('night print');
           $body.addClass('day');
           $('.pagebreak').remove();
-          $window.trigger('resize');
           $window.trigger('load');
           setTimeout(function() {
-            // $window.trigger('resize');
             $jumbotron.removeClass('cover');
           }, 300);
         }, 300);
@@ -39,10 +37,8 @@ Template.main.rendered = function() {
           $body.removeClass('day print');
           $body.addClass('night');
           $('.pagebreak').remove();
-          $window.trigger('resize');
           $window.trigger('load');
           setTimeout(function() {
-            // $window.trigger('resize');
             $jumbotron.removeClass('cover');
           }, 300);
         }, 300);
@@ -50,7 +46,6 @@ Template.main.rendered = function() {
       else if ($(this).is('.print')) {
         $body.removeClass('day night ready');
         $body.addClass('print');
-        $window.trigger('resize');
         $window.trigger('load');
         $jumbotron.removeClass('cover');
         setTimeout(function() {
@@ -63,19 +58,27 @@ Template.main.rendered = function() {
       // All is loaded.
       $body.addClass('ready');
 
+      var f = function($l, $r, j) {
+        var topMargin = parseInt($r.parent('li').css('margin-top'));
+        $r.parent('li').css('margin-top', 60);
+        var extraMargin = Math.max(0, 80 - ($r.offset().top - $l.offset().top));
+        $r.parent('li').css('margin-top', topMargin);
+        $r.parent('li').animate({
+          'margin-top': extraMargin + 60,
+        }, 300);
+      };
+
       $window.unbind('resize');
       $window.bind('resize', function() {
         // Make sure entries do not overlap.
         var i = 1;
         if (!$body.is('.print')) {
+          var j = 0;
           $oddLiElements.each(function(i, el) {
             var $self = $(this);
             var $left = $self.find('article');
             var $right = $self.next('li').find('article');
-            var extraMargin = Math.max(0, 120 - ($right.offset().top - $left.offset().top));
-            $right.parent('li').css({
-              'margin-top': extraMargin + 60,
-            });
+            f($left, $right, j);
           });
         }
 
@@ -119,6 +122,7 @@ Template.main.rendered = function() {
       var src = $jumbotron.css('background-image');
       src = src.replace('url(', '').replace(')', '');
 
+      // Translate and resize the jumbotron background-image.
       $img.load(function() {
         var image = this;
 

@@ -9,7 +9,7 @@ body {
   outline: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background 0.3s ease-in-out 0;
+  transition: background 0.1s ease-in-out 0;
 }
 
 body.day {
@@ -87,10 +87,10 @@ body.night {
   -ms-transform: scale(1.01);
   transform: scale(1.01);
 
-  -webkit-transition: all 0.3s ease 0;
-  -moz-transition: all 0.3s ease 0;
-  -ms-transition: all 0.3s ease 0;
-  transition: all 0.3s ease 0;
+  -webkit-transition: opacity 0.3s ease 0;
+  -moz-transition: opacity 0.3s ease 0;
+  -ms-transition: opacity 0.3s ease 0;
+  transition: opacity 0.3s ease 0;
 }
 
 .ready .container {
