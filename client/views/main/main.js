@@ -11,7 +11,7 @@ Template.main.rendered = function() {
 
     var d = new Date();
     // Add class for night theme.
-    if (d.getHours() > 19 || d.getHours() < 7) {
+    if (d.getHours() >= 19 || d.getHours() < 7) {
       $body.addClass('night');
     }
     else {
@@ -28,6 +28,7 @@ Template.main.rendered = function() {
           $window.trigger('load');
           $window.trigger('resize');
           setTimeout(function() {
+            $window.trigger('resize');
             $jumbotron.removeClass('cover');
           }, 300);
         }, 300);
