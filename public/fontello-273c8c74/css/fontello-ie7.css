@@ -1,0 +1,21 @@
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'fontello';
+  font-style: normal;
+  font-weight: normal;
+ 
+  /* fix buttons height */
+  line-height: 1em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+}
+ 
+.icon-twitter-circled { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x61;&nbsp;'); }
+.icon-facebook-circled-1 { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x62;&nbsp;'); }
+.icon-drupal-1 { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x63;&nbsp;'); }
+.icon-linkedin-circled { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x64;&nbsp;'); }
+.icon-gplus-circled { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x65;&nbsp;'); }
+.icon-github-circled { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x66;&nbsp;'); }
+.icon-dribbble-circled { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x67;&nbsp;'); }
+.icon-skype-circled { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x68;&nbsp;'); }
+.icon-instagram-circled { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x69;&nbsp;'); }

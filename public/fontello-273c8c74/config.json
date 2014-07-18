@@ -1,0 +1,64 @@
+{
+  "name": "",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "91daf8fde1042a363514ca7e42d89570",
+      "css": "github-circled",
+      "code": 102,
+      "src": "entypo"
+    },
+    {
+      "uid": "0419da6446cb4f31093e2022793571ca",
+      "css": "twitter-circled",
+      "code": 97,
+      "src": "entypo"
+    },
+    {
+      "uid": "ce1d525f3f31024c6a6b38f5e9a88953",
+      "css": "facebook-circled-1",
+      "code": 98,
+      "src": "entypo"
+    },
+    {
+      "uid": "818a6c2a76c89800632c0335e9cdafee",
+      "css": "gplus-circled",
+      "code": 101,
+      "src": "entypo"
+    },
+    {
+      "uid": "21adad41ffebf469b2370d26bcb8a3c4",
+      "css": "linkedin-circled",
+      "code": 100,
+      "src": "entypo"
+    },
+    {
+      "uid": "ec3e0b50a56867ac26a6de47953b9831",
+      "css": "dribbble-circled",
+      "code": 103,
+      "src": "entypo"
+    },
+    {
+      "uid": "8354734770d837204e6a004885240d2e",
+      "css": "skype-circled",
+      "code": 104,
+      "src": "entypo"
+    },
+    {
+      "uid": "0a16125788558bcc5d70ae3f10effce5",
+      "css": "instagram-circled",
+      "code": 105,
+      "src": "mfglabs"
+    },
+    {
+      "uid": "9794e9b767f192e0d499dfc98d52e802",
+      "css": "drupal-1",
+      "code": 99,
+      "src": "zocial"
+    }
+  ]
+}
