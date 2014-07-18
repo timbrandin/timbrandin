@@ -25,10 +25,10 @@ Template.main.rendered = function() {
           $body.removeClass('night print');
           $body.addClass('day');
           $('.pagebreak').remove();
-          $window.trigger('load');
           $window.trigger('resize');
+          $window.trigger('load');
           setTimeout(function() {
-            $window.trigger('resize');
+            // $window.trigger('resize');
             $jumbotron.removeClass('cover');
           }, 300);
         }, 300);
@@ -39,10 +39,10 @@ Template.main.rendered = function() {
           $body.removeClass('day print');
           $body.addClass('night');
           $('.pagebreak').remove();
-          $window.trigger('load');
           $window.trigger('resize');
+          $window.trigger('load');
           setTimeout(function() {
-            $window.trigger('resize');
+            // $window.trigger('resize');
             $jumbotron.removeClass('cover');
           }, 300);
         }, 300);
@@ -50,6 +50,7 @@ Template.main.rendered = function() {
       else if ($(this).is('.print')) {
         $body.removeClass('day night ready');
         $body.addClass('print');
+        $window.trigger('resize');
         $window.trigger('load');
         $jumbotron.removeClass('cover');
         setTimeout(function() {
