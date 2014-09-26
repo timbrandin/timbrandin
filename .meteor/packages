@@ -4,14 +4,12 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-accounts-linkedin
 accounts-base
 accounts-oauth
-fast-render
-moment
-bootstrap-3
-iron-router
+arunoda:fast-render@0.2.8
+mrt:moment@2.6.0
+cmather:iron-router@0.7.1
 jquery
 less
 stylus
-jq-knob
+mizzao:bootstrap-3
