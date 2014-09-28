@@ -8,8 +8,9 @@ accounts-base
 accounts-oauth
 arunoda:fast-render@0.2.8
 mrt:moment@2.6.0
-cmather:iron-router@0.7.1
 jquery
 less
 stylus
 mizzao:bootstrap-3
+iron:router
+
