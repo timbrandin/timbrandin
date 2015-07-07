@@ -18,5 +18,9 @@
       <a href="https://github.com/timbrandin" title="GitHub"
          target="_blank"><i class="icon-github-circled"></i></a>
     </div>
+    <div class="text-center fork">
+      <a href="https://github.com/timbrandin/resumeteor" title="GitHub Fork"
+         target="_blank">Fork me on Github</a>
+    </div>
   </div>
 </template>

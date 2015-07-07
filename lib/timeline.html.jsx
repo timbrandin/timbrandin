@@ -21,7 +21,7 @@
                 projects and <a href="http://meteor.com">Meteor</a> web and hybrid (Cordova/PhoneGap) applications in JavaScript.
               </p>
               <ul class="features">
-                <li>18 Projects</li>
+                <li>14 Projects</li>
               </ul>
               <div class="meta">
                 <b>STUDIO INTERACT BY FINDWISE, <br />FINDWISE GÖTEBORG AB</b> <span class="length">2 Years</span>
