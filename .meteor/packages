@@ -3,14 +3,21 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-standard-app-packages
-accounts-base
-accounts-oauth
-arunoda:fast-render@0.2.8
+meteor-platform
+http
+react
+meteorhacks:react-layout
+meteorhacks:flow-router-ssr
+meteorhacks:fast-render
+timbrandin:jsx-templating
 mrt:moment@2.6.0
 jquery
 less
 stylus
 mizzao:bootstrap-3
-iron:router
+reactive-var
+meteorhacks:npm
+cosmos:browserify
 
+
+npm-container

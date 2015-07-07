@@ -1,0 +1,499 @@
+html, body, #react-root, .profile {
+  height: 100%;
+}
+
+#react-root, .profile {
+  position: fixed;
+  width: 100%;
+  overflow: scroll;
+}
+
+body {
+  font-family: 'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  outline: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 0.1s ease-in-out 0;
+}
+
+.profile {
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.main {
+  top: 65%;
+  transform: translateZ(0);
+}
+
+#day:target ~ .main,
+.day .main {
+  color: #333;
+  background: #ddd;
+}
+
+#night:target ~ .main,
+.night .main {
+  color: white;
+  background: #000;
+}
+
+#night:target ~ .main a,
+.profile .night .main a {
+  color: #ddd;
+}
+
+.profile #day:target ~ .main a,
+.profile .day .main a {
+  color: #333;
+}
+
+.social a {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  margin: 10px;
+  transition: all 0.1s ease-out 0;
+}
+
+.social a i {
+  font-size: 40px;
+  line-height: 0;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -30px;
+  transition: all 0.1s ease-out 0;
+}
+
+.social a:hover i {
+  font-size: 50px;
+  top: -5px;
+  margin-left: -35px;
+}
+
+.mail {
+  text-align: center;
+  font-size: 25px;
+  line-height: 38px;
+  margin-bottom: 10px;
+}
+
+.jumbotron {
+  background: no-repeat;
+  text-align: center;
+  margin-bottom: 0;
+  color: white;
+  max-height: 800px;
+  min-height: 65%;
+
+  opacity: 0;
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+
+  -webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
+
+  position: relative;
+  height: 100vh;
+  transform-style: preserve-3d;
+}
+
+.ready .jumbotron {
+  opacity: 1;
+  -webkit-transform: scale(1.0);
+  -moz-transform: scale(1.0);
+  -ms-transform: scale(1.0);
+  transform: scale(1.0);
+}
+
+.jumbotron {
+  position: relative;
+  height: 100vh;
+  transform-style: preserve-3d;
+  padding: 30px;
+}
+
+.jumbotron:before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0; left: 0;
+  background: black;
+  z-index: -1;
+  transform: translateZ(-2px) scale(3.0);
+}
+
+#day:target ~ .jumbotron,
+.day .jumbotron {
+  background-position: center top;
+}
+
+#day:target ~ .jumbotron:before,
+.day .jumbotron:before {
+  background-image: url(/30008-Brandin-2014-05-22-4-Redigera.jpg);
+  background-position: inherit;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: translateZ(-1px) scale(2) translateY(-100px);
+  box-shadow: inset 0px -120px 100px -50px rgb(213, 216, 221);
+}
+
+#day:target ~ .main,
+.day .main {
+  width: 100%;
+  position: absolute;
+  background: #ddd;
+  background: rgba(213, 216, 221, 0.95);
+}
+
+#night:target ~ .main,
+.night .main {
+  width: 100%;
+  position: absolute;
+  background: #000;
+  background: rgba(0, 0, 0, 0.85);
+}
+
+#night:target ~ .jumbotron,
+.night .jumbotron {
+  background-position: center center;
+}
+
+#night:target ~ .jumbotron:before,
+.night .jumbotron:before {
+  background-image: url(/30008%20Brandin%202014-05-22-88.jpg);
+  background-position: inherit;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: inset 0 -100px 100px #000, 0 0 0 9999px #000;
+  height: 100vh;
+}
+
+.jumbotron {
+  transition: height 0.6s ease-out 0;
+}
+
+.print .jumbotron.cover:before {
+  transition: none;
+  display: none;
+}
+
+.jumbotron.cover:before {
+  opacity: 1;
+}
+
+.container {
+  opacity: 0;
+  -webkit-transform: scale(1.01);
+  -moz-transform: scale(1.01);
+  -ms-transform: scale(1.01);
+  transform: scale(1.01);
+
+  -webkit-transition: opacity 0.3s ease 0;
+  -moz-transition: opacity 0.3s ease 0;
+  -ms-transition: opacity 0.3s ease 0;
+  transition: opacity 0.3s ease 0;
+}
+
+.ready .container {
+  opacity: 1;
+  -webkit-transform: scale(1.0);
+  -moz-transform: scale(1.0);
+  -ms-transform: scale(1.0);
+  transform: scale(1.0);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 0.35em;
+  font-size: 4em;
+  font-weight: 400;
+  opacity: 0;
+  -webkit-transition: opacity 2s ease 0.3s;
+  -moz-transition: opacity 2s ease 0.3s;
+  -ms-transition: opacity 2s ease 0.3s;
+  transition: opacity 2s ease 0.3s;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.lead {
+  margin-bottom: 40px;
+  font-size: 1.75em;
+  font-weight: 300;
+  text-align: center;
+  padding: 0 20px 40px;
+  opacity: 0;
+  -webkit-transition: opacity 2s ease 0.6s;
+  -moz-transition: opacity 2s ease 0.6s;
+  -ms-transition: opacity 2s ease 0.6s;
+  transition: opacity 2s ease 0.6s;
+}
+
+.ready h1,
+.ready .lead {
+  opacity: 1;
+}
+
+section {
+  padding: 20px;
+}
+
+@media (max-width: 640px) {
+  .night .jumbotron {
+    min-height: 90%;
+    margin-bottom: -5%;
+  }
+
+  section {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  .lead {
+    font-size: 1.25em;
+    padding: 0 10px;
+  }
+
+  h2 {
+    font-size: 1.75em;
+  }
+}
+
+@media (max-width: 640px) and (orientation:portrait) {
+  .night .jumbotron {
+    min-height: 65%;
+    margin-bottom: -30%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (max-width: 540px) {
+  .col-xxs-12 {
+    width: 100%;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+.showcases {
+  background: #333;
+  color: white;
+  overflow: hidden;
+}
+
+.showcases ul {
+  list-style: none;
+  padding: 0;
+  width: 9999px;
+}
+
+.showcases li {
+  padding: 30px;
+  width: 200px;
+  height: 200px;
+  float: left;
+  border: solid 1px #666;
+  margin: 20px;
+}
+
+.showcases ul:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.switch {
+  border-radius: 30px;
+  padding-left: 3px;
+  background: rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: -1;
+  font-size: 11px;
+  font-weight: 800;
+  float: right;
+}
+
+#print:target ~ .jumbotron .switch,
+.print .switch {
+  box-shadow: 0 0 0 1px #000;
+}
+
+.switch:after {
+  content: '';
+  display: block;
+  break: both;
+}
+
+.switch .selector {
+  display: block;
+  position: absolute;
+  z-index: -1;
+  background: #000;
+  border-radius: 34px;
+  top: 3px;
+  left: 3px;
+  width: 40px;
+  height: 30px;
+  -webkit-transition: all 0.2s ease-out 0;
+  -moz-transition: all 0.2s ease-out 0;
+  -o-transition: all 0.2s ease-out 0;
+  transition: all 0.2s ease-out 0;
+}
+
+.switch .option:target {
+  border: solid 4px red;
+}
+
+.switch a.option {
+  color: #000;
+  text-decoration: none;
+}
+
+#print:target ~ .jumbotron:before,
+.print .jumbotron:before {
+  display: none;
+}
+
+#day:target ~ .jumbotron .switch .selector,
+.day .switch .selector {
+  left: 46px;
+}
+
+#day:target ~ .jumbotron .switch a {
+  color: #000;
+}
+
+#print:target ~ .jumbotron .switch a {
+  color: #000;
+}
+
+#day:target ~ .jumbotron .switch a.day,
+.day .switch a.night {
+  color: white;
+}
+
+#night:target ~ .jumbotron .switch a.night,
+.night .switch a.night {
+  color: white;
+}
+
+#print:target + .jumbotron .switch .selector,
+.print .switch .selector {
+  left: 89px;
+}
+
+#print:target + .jumbotron .switch a.print,
+.print .switch a.print {
+  color: white;
+}
+
+.switch .option {
+  display: block;
+  float: left;
+  width: 40px;
+  margin: 3px;
+  margin-left: 0;
+  padding: 5px 3px;
+  border-radius: 30px;
+  text-align: center;
+  cursor: pointer;
+  line-height: 20px;
+  -webkit-transition: all 0.2s ease-out 0;
+  -moz-transition: all 0.2s ease-out 0;
+  -ms-transition: all 0.2s ease-out 0;
+  transition: all 0.2s ease-out 0;
+}
+
+#day:target ~ .main section.skills,
+section.skills {
+  background: white;
+  color: #333
+}
+
+#night:target ~ .main section.skills,
+.night section.skills {
+  background: #222;
+  color: white;
+}
+
+dl.skills {
+  text-align: center;
+  max-width: 1024px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+dl.skills dt {
+  display: inline-block;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  margin: 5px;
+  border-radius: 4px;
+  text-align: center;
+  background: #000;
+  color: #fff;
+  font-size: 20px;
+  line-height: 34px;
+  font-weight: 800;
+  box-shadow: 0 15px 30px 0 rgba(255, 255, 255, 0.06) inset,0 -15px 30px 0 rgba(0, 0, 0, 0.06) inset;
+}
+
+#day:target ~ .main .skills dt,
+.day .skills dt {
+  background: #ddd;
+  color: #000;
+}
+
+@media (max-width: 640px) {
+  dl.skills {
+    margin-bottom: 35px;
+  }
+
+  dl.skills dt {
+    font-size: 14px;
+    line-height: 22px;
+    padding: 6px 12px;
+  }
+
+  .contact {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-bottom: 30px;
+  }
+}
