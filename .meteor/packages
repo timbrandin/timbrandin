@@ -18,6 +18,4 @@ mizzao:bootstrap-3
 reactive-var
 meteorhacks:npm
 cosmos:browserify
-
-
 npm-container
