@@ -146,7 +146,7 @@ header {
 
 #day:target ~ .jumbotron:before,
 .day .jumbotron:before {
-  background-image: url(/30008-Brandin-2014-05-22-4-Redigera.jpg);
+  background-image: url(/timbrandin-day.jpg);
   background-position: inherit;
   background-size: cover;
   background-repeat: no-repeat;
@@ -177,7 +177,7 @@ header {
 
 #night:target ~ .jumbotron:before,
 .night .jumbotron:before {
-  background-image: url(/30008%20Brandin%202014-05-22-88.jpg);
+  background-image: url(/timbrandin-night.jpg);
   background-position: inherit;
   background-repeat: no-repeat;
   background-size: cover;

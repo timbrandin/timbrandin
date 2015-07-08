@@ -10,7 +10,7 @@
         <a class="option day" href="#day">DAY</a>
       </div>
       <div class="print avatar">
-        <img src="/timbrandin.png" />
+        <img src="/timbrandin.jpg" />
       </div>
     </header>
     <div class="main">

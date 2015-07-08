@@ -247,7 +247,7 @@
           <article>
             <figure>
               <a href="https://www.youtube.com/watch?v=9zXChwf3KW0">
-                <img src="/agv.png" />
+                <img src="/agv.jpg" />
               </a>
               <span class="time">01/2009 - 06/2009</span>
             </figure>
