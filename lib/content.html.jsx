@@ -1,5 +1,5 @@
 <template name="Content">
-  <div class={this.data ? this.data.classes : ''}>
+  <div class="{{classes}}">
     <span id="day"></span>
     <span id="night"></span>
     <span id="print"></span>
@@ -36,7 +36,7 @@ Template.Content.onCreated(function() {
 
 Template.Content.helpers({
   classes() {
-    return classNames(this.classes.get());
+    return this.classes.get();
   }
 });
 
