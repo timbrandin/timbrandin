@@ -1,0 +1,43 @@
+{
+  "name": "timbrandin",
+  "description": "Tim Brandin",
+  "version": "1.0.0",
+  "author": "Tim Brandin <tim.brandin@gmail.com>",
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "gatsby": "^1.6.5",
+    "gatsby-link": "^1.6.5",
+    "gatsby-plugin-catch-links": "^1.0.4",
+    "gatsby-plugin-google-analytics": "^1.0.3",
+    "gatsby-plugin-offline": "^1.0.4",
+    "gatsby-plugin-react-helmet": "^1.0.1",
+    "gatsby-plugin-sass": "^1.0.12",
+    "gatsby-plugin-sharp": "^1.6.6",
+    "gatsby-plugin-sitemap": "^1.2.1",
+    "gatsby-source-filesystem": "^1.4.2",
+    "gatsby-transformer-remark": "^1.7.0",
+    "gatsby-transformer-sharp": "^1.6.5",
+    "graphql": "^0.10.5",
+    "moment": "^2.18.1"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "start": "./node_modules/.bin/gatsby develop",
+    "build": "./node_modules/.bin/gatsby build",
+    "develop": "./node_modules/.bin/gatsby develop",
+    "format": "./node_modules/.bin/prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "setup": "./node_modules/.bin/s3-website create -r eu-central-1 timbrandin.com",
+    "deploy": "./node_modules/.bin/s3-website deploy ./public",
+    "publish": "./node_modules/.bin/gatsby build --prefix-paths && ./node_modules/.bin/s3-website deploy ./public"
+  },
+  "devDependencies": {
+    "gatsby-cli": "^1.0.12",
+    "prettier": "^1.5.2",
+    "s3-website": "^3.1.0"
+  }
+}

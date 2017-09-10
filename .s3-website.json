@@ -1,0 +1,11 @@
+{
+   "index": "index.html",
+   "region": "eu-central-1",
+   "uploadDir": "./public",
+   "prefix": "",
+   "corsConfiguration": [],
+   "enableCloudfront": false,
+   "retries": 20,
+   "domain": "timbrandin.com",
+   "configFile": ".s3-website.json"
+}

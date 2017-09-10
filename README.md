@@ -1,6 +1,17 @@
-ResuMeteor
-==========
+# Tim Brandin
+Static site generated from React components.
 
-Resume/Biography built with React and Meteor.
+For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/)
 
-[![PayPayl donate button](http://img.shields.io/paypal/donate.png?color=green)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=tim%2ebrandin%40gmail%2ecom&lc=US&item_name=Tim%20Brandin&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest "Donate once-off to this project using Paypal")
+## Deploy
+
+```
+npm run build
+npm run deploy
+```
+
+or
+
+```
+npm run publish
+```

@@ -1,0 +1,11 @@
+pipelines:
+  branches:
+    master:
+      - step:
+          image: node:boron
+          caches:
+            - node
+          script:
+            - npm prune # clear out removed packages.
+            - npm install # install new packages to cache.
+            - npm run publish # publish changes to s3-website
